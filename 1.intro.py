@@ -176,3 +176,122 @@ a = 3
 # print(float(2))
 # print(int('2.5'))
 
+# 4. 시퀀스 데이터
+# 리스트(list), 튜플(tuple), 레인지(range), 문자열(string)
+
+# 4.1 리스트
+# a = [value1, value2, value3...]
+# a[index]
+
+a = []
+b = list()
+# print(type(a), type(b))
+
+location = ['서울', '대전', '대구']
+# print(location[2])
+
+# 4.2 튜플
+# 수정불가능(immutable)
+# a = (value1, value2...)
+# a[index]
+
+a = (1, 2, 3, 4, 5)
+# a[1] = 10 과 같이 수정을 하려고 하면 에러가 난다. 
+# print(a[2])
+
+# 각각 할당된다 -> 1이 b에 들어가고 2가 c에 들어감
+# b, c = (1, 2)
+# print(b)
+
+# b, c = c, b
+# print(b, c)
+
+
+# 4.3 레인지
+# range(n) : 0부터 n-1까지
+# range(n, m) : n부터 m-1까지
+# range(n, m, s) : n부터 m-1까지 s간격으로
+
+a = range(5, 10, 2)
+# print(list(a))
+
+
+# 4.4 시퀀스에서 사용 할 수 있는 연산
+
+# in
+a = 'a'
+b = ['a','p','p','l','e']
+c = 5
+d = range(10)
+# print(a in b)
+# print(c in d)
+
+# concatenation
+# 연결
+a = [1, 2]
+b = [3, 4]
+
+# print(a + b)
+
+# 반복
+a = 'hi'
+b = [123]
+# print(a*5)
+# print(b*5)
+
+# indexing
+# 문자열도 시퀀스 데이터기 때문에 가능
+a = [1, 2, 3, 4]
+b = 'hello'
+c = range(10)
+# print(a[1])
+# print(b[1])
+# print(c[5])
+
+# slicing
+a = 'hello'
+# print(a[1:3])
+b = (1, 2, 3, 4, 5)
+# print(b[1:3])
+c = '123456789'
+# print(c[1:10:2])
+# print(c[::2])
+
+# 함수
+a = [1, 2, 1, 4, 5]
+# print(len(a))
+# print(a.count(1))
+
+
+# 5. 시퀀스가 아닌 자료
+
+# 5.1 set
+# a = {value1, value2, ...}
+# 순서가 없고 중복이 없음
+a = {1, 2, 3, 4, 5, 5} # 5를 중복으로 작성해도 출력하면 하나만 나옴
+b = {2, 4, 6, 8}
+
+# 합집합
+print(a | b)
+# 차집합
+print(a - b)
+# 교집합
+print(a & b)
+
+# 중복 데이터 날리고 list로 다시 바꾸기
+a = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+print(list(set(a)))
+
+# 5.2 dictionary
+
+
+
+
+
+
+
+
+
+
+
+
