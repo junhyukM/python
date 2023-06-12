@@ -180,8 +180,10 @@ a = 3
 # 리스트(list), 튜플(tuple), 레인지(range), 문자열(string)
 
 # 4.1 리스트
+# 수정 가능 
 # a = [value1, value2, value3...]
 # a[index]
+# +a : 파이썬에서는 list, 다른언어들에서는 array / 배열
 
 a = []
 b = list()
@@ -189,6 +191,18 @@ b = list()
 
 location = ['서울', '대전', '대구']
 # print(location[2])
+location[0] = '부산'
+# print(location)
+
+# 리스트 안에 다양한 형태
+# 한 줄에 하나의 데이터를 작성
+a = [
+    [1, 2, 3],
+    {4, 5, 6},
+    (7, 8, 9),
+] 
+
+# print(a)
 
 # 4.2 튜플
 # 수정불가능(immutable)
@@ -247,6 +261,9 @@ c = range(10)
 # print(a[1])
 # print(b[1])
 # print(c[5])
+# 음수도 가능
+# print(a[-2])
+# print(b[-5])
 
 # slicing
 a = 'hello'
@@ -272,26 +289,46 @@ a = {1, 2, 3, 4, 5, 5} # 5를 중복으로 작성해도 출력하면 하나만 �
 b = {2, 4, 6, 8}
 
 # 합집합
-print(a | b)
+# print(a | b)
 # 차집합
-print(a - b)
+# print(a - b)
 # 교집합
-print(a & b)
+# print(a & b)
 
 # 중복 데이터 날리고 list로 다시 바꾸기
 a = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-print(list(set(a)))
+# print(list(set(a)))
 
 # 5.2 dictionary
+# a = {key1: value1, key2: value2, ...}
+# key는 immutable한 것만 가능
+
+a = {}
+a = dict()
+
+book = {
+    'apple': '사과', 
+    'banana': '바나나',
+}
+# print(book['apple'])
+
+# 뒤에 있는 key의 value가 덮어쓴다
+b = {1: 1, 2: 2, 3: 3, 1: 4}
+# print(b[1])
+# print(b)
+# print(b.keys())
+# print(b.values())
 
 
 
+# 정리
 
+# 1. 시퀀스 (ordered)
+# - 'String' : immutable
+# - [list] : mutable
+# - (Tuple) : immutable
+# - range() : immutable
 
-
-
-
-
-
-
-
+# 2. 시퀀스가 아닌것(unordered)
+# - {set} : mutable
+# - {Dict: ionary} : mutable
