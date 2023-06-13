@@ -267,3 +267,18 @@ for number in numbers:
     # => False
 else:
     print(False)
+
+
+# 1.2.7 match
+
+status = 1
+
+match status:
+    case 400:
+        print(1)
+    case 404:
+        print(2)
+    case 418:
+        print(3)
+    case _:
+        print(4)
