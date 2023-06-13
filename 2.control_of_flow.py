@@ -136,25 +136,134 @@ menus = ['라면', '김밥', '돈까스', '삼겹살']
 # for i in range(len(menus)):
 #     print(menus[i])
 
-for idx, menu in enumerate(menus):
+# for idx, menu in enumerate(menus):
     # idx, menu = (0, '라면')
     # idx, menu = (1, '김밥')
     # idx, menu = (2, '돈까스')
     # idx, menu = (3, '삼겹살')
-    print(idx, menu)
+    # print(idx, menu)
 
 
+# 1.2.3 dictionary 반복
+
+info = {
+    'name': 'min',
+    'location': 'seoul',
+}
+
+# for i in info:
+#     print(f'{i}, {info[i]}')
+
+# 1. dictionary (key 반복)
+# for key in info:
+#     print(key)
+
+ # 2. key반복
+# for key in info.keys():
+#     print(key)   
+
+# 3. value 반복
+# for value in info.values():
+#     print(value)
+
+# 4. key, value 반복
+# for key, value in info.items():
+#     print(key, value)
+
+# print(info.keys())
+# print(info.values())
+# print(info.items())
 
 
+blood_type = {
+    'A': 10,
+    'B': 8,
+    'O': 5,
+    'AB': 5,
+}
+
+# 1. 혈액형 종류는 다음과 같습니다. A, B, O, AB
+# 2. 혈액형 종류는 다음과 같습니다. A, B, O, AB
+# 3. 학생수는 28명 입니다.
+# 4. A형은 10명입니다...
+
+# 1, 2   keys() 유무가 결과에 영향 X 
+# result = []
+# for key in blood_type.keys():
+#     result.append(key)
+# # ', ' 문자열 객체의 join이라는 메소드    
+# result = ', '.join(result)
+# print(f'혈액형 종류는 다음과 같습니다. {result}')
+
+# 3.
+# result = 0
+# for value in blood_type.values():
+#     result = result + value
+# print(f'학생수는 {result}명 입니다.')    
+
+# 4.
+# for k, v in blood_type.items():
+#     print(f'{k}형은 {v}명입니다.')
 
 
+# 1.2.4 break
+
+# for i in range(10):
+#     if i > 2:
+#         print('2초과입니다.')
+#         break
+#     print(i)    
 
 
+# 연습
+# rice = ['보리', '보리', '보리', '쌀', '보리' '보리']
+
+# for i in rice:
+#     if i == '쌀':
+#         print('잡았다')
+#         break
+#     print(i)
 
 
+# 1.2.5 continue
+
+# for i in range(5):
+#     if i % 2:
+#         continue
+#     print(f'{i}는 짝수입니다.')
+
+# 연습
+# 20살 이상이면 '성인입니다' 미만이라면 X
+# age = [6, 70, 15, 34, 65, 10, 30, 20, 60, 4]
+
+# for i in age:
+#     if i < 20:
+#         continue
+#     print(f'{i}살은 성인입니다')
 
 
+# 1.2.6 else
 
+# for i in range(50):
+#     print(i)
 
+#     if i == 5:
+#         print(f'{i}번째에서 break')
+#         break
+# else:
+#     print('break를 만나지 않았습니다.')
 
+# 연습
+numbers = [1, 5, 10]
+# print(5 in numbers)
 
+for number in numbers:
+    # if문으로 내가 원하는 숫자가 있으면
+    if 5 == number:
+        print(True)
+        break
+    # => True
+    # 원하는 숫자가 없으면 (끝까지 다 확인했지만 if문을 거치는게 없는 경우)
+    # => False
+else:
+    print(False)
