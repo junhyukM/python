@@ -157,21 +157,150 @@ def fake_dict(**kwargs):
 
 # fake_dict(name='홍길동', location='서울')
 
-def user(username, password, password_confirm):
-    if password == password_confirm:
-        print(f'{username}님 회원가입이 완료되었습니다.')
+# def user(username, password, password_confirm):
+#     if password == password_confirm:
+#         print(f'{username}님 회원가입이 완료되었습니다.')
+#     else:
+#         print('비밀번호가 일치하지 않습니다.') 
+
+# user('홍길동', '1234', '12034')
+
+# my_user = {
+#     'username': '이순신',
+#     'password': 'qwer',
+#     'password_confirm': 'qwer',
+# }
+# # 정의 할떄 말고 이렇게 사용도 가능한데 거의 안씀
+# user(**my_user)
+
+
+# 6. lambda
+# lambda parameter: expression(표현식, 코드)
+
+# def my_sum(a, b):
+#     return a + b
+
+# result = my_sum(1, 5)
+# print(result)
+
+# print((lambda a, b: a + b)(1, 2))
+
+
+def make_incrementor(n):
+    return lambda x: x + n
+
+# 변수에 함수 저장
+f = make_incrementor(42)
+# 아래와 같다
+#f = lambda x: x + 42
+# 아래와 같은 느낌
+##def f(x):
+##    return x + 42
+
+# print(f(100))
+
+
+
+# 7. 이름공간 및 스코프(scope)
+# LEGB
+# 1번부터 우선순위
+# 1. Local : 정의된 함수 내부
+#   - 함수가 실행된 시점 이후부터 리턴 할 때 까지 존재
+# 2. Enclosed : 상위 함수 (람다 때 참고)
+#   - 함수가 실행된 시점 이후부터 리턴 할 때 까지 존재
+# 3. Global : 함수 밖 or import 된 모듈
+#   - 모듈이 호출된 시점 이후 끝까지 존재
+# 4. Built-in : 파이썬에 내장되어있는 함수 혹은 변수
+#   - 파이썬이 실행된 이후 끝까지 존재
+
+# 기존의 함수와 같은 이름으로 변수를 만들어 보면
+# 문제가 생긴다.
+# Local scope 에서 print를 변수로 저장했기 때문이다.
+# print = 'hello'
+# print(print)
+
+a = 1
+def localscope(a):
+    print(a)
+# localscope(10)
+
+# 전역 변수 건드린다.
+# 아래와 같이 하면 전역 변수가 수정이 일어난다.
+global_a = 1
+def localscope2():
+    global global_a
+    global_a = 2
+    print(global_a)
+
+# localscope2()
+# print(global_a)
+
+
+
+# 8. 재귀 함수 (recursive function)
+
+# 팩토리얼 반복문
+def fact(n):
+    #1부터 n까지의 수를 곱하기
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result    
+# print(fact(5))
+
+# 팩토리얼 재귀
+# f(3)
+# 3 * f(2)
+# 3 * 2 * f(1)
+# 3 * 2 * 1
+# 3 * 2
+# 6
+# 팩토리얼 함수 안에서 다시 팩토리얼 함수를 return
+# 함수안에 함수안에 함수안에 함수안에 함수안에 함수안에 함수안에 ...
+
+def factorial(n):
+    if n <= 1:
+        return n
     else:
-        print('비밀번호가 일치하지 않습니다.') 
+        return n * factorial(n-1)
 
-user('홍길동', '1234', '12034')
+# print(factorial(5))
 
-my_user = {
-    'username': '이순신',
-    'password': 'qwer',
-    'password_confirm': 'qwer',
-}
-# 정의 할떄 말고 이렇게 사용도 가능한데 거의 안씀
-user(**my_user)
+
+# 피보나치 수열 반복문
+def fib(n):
+    result = [1, 1]
+    for i in range(1, n):
+        end1 = result[-1]
+        end2 = result[len(result) - 2]
+        fib_num = end1 + end2
+        result.append(fib_num)
+
+    return result[-1]
+
+# print(fib(1000))
+    
+# 피보나치 수열 재귀
+def fib(n):
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+   
+# print(fib(10))
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
