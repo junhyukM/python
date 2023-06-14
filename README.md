@@ -26,7 +26,7 @@
 1. set - mutable
 2. dictionary -mutable
 
-> ### 내용참고 [1.intro.md](https://github.com/junhyukM/python/blob/master/1.intro.md)
+> 정리자료 링크 [1.intro.md](https://github.com/junhyukM/python/blob/master/1.intro.md)
 
 ## 제어문
 ### 1. 조건문
@@ -57,4 +57,16 @@ for variable in sequence:
     실행할 코드
 ```    
 
-> ### 내용참고 [2.control_of_flow](https://github.com/junhyukM/python/blob/master/2.control_of_flow.md)
+> 정리자료 링크 [2.control_of_flow](https://github.com/junhyukM/python/blob/master/2.control_of_flow.md)
+
+### 함수의 선언 호출 등 기본적인 내용들과 여러 기능 학습
+
+> 정리자료 링크 [3.function](https://github.com/junhyukM/python/blob/master/3.function.md)
+
+### 자료구조들의 기본적인 내용 학습
+    - 문자열
+    - 리스트
+    - 딕셔너리
+    - 세트
+    자료구조들의 특성과 자주 사용하는 기본적인 메소드 학습
+> 정리자료 링크 []()
