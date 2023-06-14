@@ -69,4 +69,4 @@ for variable in sequence:
     - 딕셔너리
     - 세트
     자료구조들의 특성과 자주 사용하는 기본적인 메소드 학습
-> 정리자료 링크 []()
+> 정리자료 링크 [4.data_structure](https://github.com/junhyukM/python/blob/master/4.data_structure.md)
