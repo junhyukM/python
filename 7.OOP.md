@@ -31,7 +31,7 @@ print(class_a.a)
 # 인스턴스에서 메소드를 바로 실행 가능 
 class_a.b()
 ```    
-![Class_img](./assets/Class.PNG)
+![Class_img](./assets/Class.png)
 ## 클래스 연습
 
 ```python
