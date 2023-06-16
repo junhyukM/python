@@ -473,23 +473,87 @@ class Dad(Person):
 class FirstBaby(Mom, Dad):
     pass
 b1 = FirstBaby('첫째')
-b1.swim()
-b1.run()
-b1.greeting()
-print(b1.gene)
+# b1.swim()
+# b1.run()
+# b1.greeting()
+# print(b1.gene)
 
 class SecondBaby(Dad, Mom):
     pass
 b2 = SecondBaby('둘째')
-b2.breath()
-b2.run()
-b2.greeting()
-print(b2.gene)
+# b2.breath()
+# b2.run()
+# b2.greeting()
+# print(b2.gene)
 
 
 
+# 연습
+
+class Pocketmon():
+    def __init__(self):
+        self.level = 1
+        self.hp = self.level * 5
+        self.exp = 0
+
+    def attack(self, opponent):
+        damege = self.level * 2
+        opponent.hp -= damege
+        if opponent.check_hp():
+            self.exp += 5
+        print('attack!')
+    
+    def check_hp(self):
+        return True if self.hp <= 0 else False
 
 
+class Type():
+    def __init__(self, type_name):
+        self.type_name = type_name
+
+class WaterPocketmon(Pocketmon):
+    def heal(self):
+        if self.hp <= 3:
+            self.hp += 4
+            print('heal!')
+
+    def swim(self):
+        print('어푸어푸')        
+       
+
+class FierPocketmon(Pocketmon):
+    def heal(self):
+         if self.hp <= 3:
+            self.hp += 6
+            print('heal!')
+
+    def fly(self):
+        print('펄럭펄럭')
+        
+
+kobokki = WaterPocketmon()
+pairi = FierPocketmon()
+
+
+print(kobokki.hp)
+pairi.attack(kobokki)
+pairi.attack(kobokki)
+print(kobokki.hp)
+kobokki.heal()
+print(kobokki.hp)
+
+
+
+print(pairi.hp)
+kobokki.attack(pairi)
+kobokki.attack(pairi)
+print(pairi.hp)
+pairi.heal
+print(pairi.hp)
+
+kobokki.swim()
+
+pairi.fly()
 
 
 
