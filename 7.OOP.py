@@ -554,8 +554,3 @@ print(pairi.hp)
 kobokki.swim()
 
 pairi.fly()
-
-
-
-
-
