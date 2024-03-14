@@ -132,3 +132,33 @@ def solution(s):
     answer = sum(num_list)    
 
     return answer
+
+
+
+# 입문 문제 - 2진수 더하기
+# 이진수를 의미하는 두 개의 문자열 bin1과 bin2가 매개변수로 주어질 때, 두 이진수의 합을 return하도록 solution 함수를 완성해주세요.
+
+'''
+return 값은 이진수를 의미하는 문자열입니다.
+1 ≤ bin1, bin2의 길이 ≤ 10
+bin1과 bin2는 0과 1로만 이루어져 있습니다.
+bin1과 bin2는 "0"을 제외하고 0으로 시작하지 않습니다.
+'''
+
+def solution(bin1, bin2):
+    answer = ''
+    # 두 이진수를 십진수로 변환
+    # 십진수인 두 수를 더하고
+    # 그 십진수를 이진수로 변환
+    num1 = str('0b' + bin1)
+    num2 = str('0b' + bin2)
+    
+    int1 = int(num1, 2)
+    int2 = int(num2, 2)
+    
+    total = int1 + int2
+    
+    answer = format(total, 'b')
+    
+    return answer
+
